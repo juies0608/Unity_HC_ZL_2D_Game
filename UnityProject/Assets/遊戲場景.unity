@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250e467763df7cb44bf4b0ef959610cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 100
+  jump: 492
   dead: 0
   goScore: {fileID: 1398995251}
   goGM: {fileID: 2139400344}
