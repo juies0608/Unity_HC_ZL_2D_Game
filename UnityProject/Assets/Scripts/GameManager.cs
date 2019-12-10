@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -67,6 +68,13 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 重新遊戲
+    ///  <summary>
+    public void Replay()
+    {
+        //Application.LoadLevel("遊戲場景"); //應用程式.載入關卡("關卡名稱")舊版 API
+        SceneManager.LoadScene("遊戲場景");
+    }
     /// 遊戲結束
     /// </summary>
     public void GameOver()
@@ -74,12 +82,20 @@ public class GameManager : MonoBehaviour
         goUI.SetActive(true);
         Ground.speed = 0;
     }
+    /// <summary>
+    /// 遊戲離開
+    /// </summary>
+    public  void Exit()
+    {
+        Application.Quit();      //應用程式.離開遊戲
+    }
 
     private void Start()
     {
         // 延遲重複調用方法("方法名稱"，延遲時間，重複頻率)
-        InvokeRepeating("SpawnPipe", 0, 1.5f);
+        InvokeRepeating("SpawnPipe", 0, 1.5f);  //複製水管.延遲幾秒.間隔幾秒
         scoreHeight = PlayerPrefs.GetInt("最高分數");
         textHeight.text = scoreHeight.ToString();
+        Ground.speed = 10.5f;
     }
 }

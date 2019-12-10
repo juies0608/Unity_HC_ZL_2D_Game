@@ -18,7 +18,7 @@ public class Ground : MonoBehaviour
         // Time.deltaTime 一幀的時間
         tran.Translate(-speed * Time.deltaTime, 0, 0);
     }
-
+    
     private void Update()
     {
         Move();

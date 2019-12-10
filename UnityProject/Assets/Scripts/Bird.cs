@@ -93,12 +93,11 @@ public class Bird : MonoBehaviour
         {
             PassPipe();
         }
+    
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void Start()
     {
-        if (collision.gameObject.name == "加分區域")
-        {
-            PassPipe();
-        }
+        //螢幕解析度(寬,高,是否全螢幕)
+        Screen.SetResolution(480, 800, false);
     }
 }
